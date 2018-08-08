@@ -1,0 +1,26 @@
+#######################################
+# Syntax Coloring Map For debug_lvc
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+PCA9685  KEYWORD1
+ServoDriver  KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+init	KEYWORD2
+setServoPulseRange	KEYWORD2
+setAngle	KEYWORD2
+setPwm 	KEYWORD2
+setFrequency	KEYWORD2
+reset	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+PCA9685_DEFAULT_I2C_ADDR	LITERAL1
+
+
