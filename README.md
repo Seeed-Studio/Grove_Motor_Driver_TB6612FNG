@@ -35,8 +35,3 @@ global distributors and partners to push open hardware movement.<br>
 
 
 [![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/grove-motor-driver-tb6612fng)](https://github.com/igrigorik/ga-beacon)
-
-
-
-<!-- git remote add origin https://github.com/Seeed-Studio/Grove_Motor_Driver_TB6612FNG.git
-git push -u origin master -->
