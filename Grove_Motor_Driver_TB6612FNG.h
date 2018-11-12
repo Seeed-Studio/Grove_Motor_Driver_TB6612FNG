@@ -37,6 +37,7 @@
 
 #define GROVE_MOTOR_DRIVER_DEFAULT_I2C_ADDR         0x14
 
+#define GROVE_MOTOR_DRIVER_DEFAULT_I2C_ADDR         0x14
 #define GROVE_MOTOR_DRIVER_I2C_CMD_BRAKE            0x00
 #define GROVE_MOTOR_DRIVER_I2C_CMD_STOP             0x01
 #define GROVE_MOTOR_DRIVER_I2C_CMD_CW               0x02
@@ -45,14 +46,12 @@
 #define GROVE_MOTOR_DRIVER_I2C_CMD_NOT_STANDBY      0x05
 #define GROVE_MOTOR_DRIVER_I2C_CMD_STEPPER_RUN      0x06
 #define GROVE_MOTOR_DRIVER_I2C_CMD_STEPPER_STOP     0x07
+#define GROVE_MOTOR_DRIVER_I2C_CMD_STEPPER_KEEP_RUN 0x08
 
-#define GROVE_MOTOR_DRIVER_I2C_CMD_GET_STATE        0x10
 #define GROVE_MOTOR_DRIVER_I2C_CMD_SET_ADDR         0x11
 #define GROVE_MOTOR_DRIVER_I2C_CMD_RST_ADDR         0x12
-
 #define GROVE_MOTOR_DRIVER_I2C_CMD_TEST_GET_REV     0xc0
-#define GROVE_MOTOR_DRIVER_I2C_CMD_TEST_TX_RX_ON    0xc1
-#define GROVE_MOTOR_DRIVER_I2C_CMD_TEST_TX_RX_OFF   0xc2
+
 
 enum motor_channel_type_t{
     MOTOR_CHA = 0,
@@ -145,7 +144,7 @@ public:
     *    mode:  4 driver mode: FULL_STEP,WAVE_DRIVE, HALF_STEP, MICRO_STEPPING, 
     *           for more information: https://en.wikipedia.org/wiki/Stepper_motor#/media/File:Drive.png
     *    steps: The number of steps to run, range from -32768 to 32767.
-    *           When steps = 0, the stepper keeps moving(direction same as the last move, default to clockwise)
+    *           When steps = 0, the stepper stops.
     *           When steps > 0, the stepper runs clockwise. When steps < 0, the stepper runs anticlockwise.
     *    rpm:   Revolutions per minute, the speed of a stepper, range from 1 to 300.
     *           Note that high rpm will lead to step lose, so rpm should not be larger than 150.
@@ -163,6 +162,22 @@ public:
     *    Null.
     *************************************************************/ 
     void stepperStop();
+
+// keeps moving(direction same as the last move, default to clockwise)
+    /*************************************************************
+    * Description
+    *    Keep a stepper running.
+    * Parameter
+    *    mode:  4 driver mode: FULL_STEP,WAVE_DRIVE, HALF_STEP, MICRO_STEPPING, 
+    *           for more information: https://en.wikipedia.org/wiki/Stepper_motor#/media/File:Drive.png
+    *    rpm:   Revolutions per minute, the speed of a stepper, range from 1 to 300.
+    *           Note that high rpm will lead to step lose, so rpm should not be larger than 150.
+    *    is_cw: Set the running direction, true for clockwise and false for anti-clockwise.
+    * 
+    * Return
+    *    Null.
+    *************************************************************/ 
+    void stepperKeepRun(stepper_mode_type_t mode, uint16_t rpm, bool is_cw);
 
 private:
     uint8_t _addr;
