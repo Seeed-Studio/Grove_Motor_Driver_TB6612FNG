@@ -5,8 +5,8 @@
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
-PCA9685  KEYWORD1
-ServoDriver  KEYWORD1
+PCA9685	KEYWORD1
+ServoDriver	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -14,7 +14,7 @@ ServoDriver  KEYWORD1
 init	KEYWORD2
 setServoPulseRange	KEYWORD2
 setAngle	KEYWORD2
-setPwm 	KEYWORD2
+setPwm	KEYWORD2
 setFrequency	KEYWORD2
 reset	KEYWORD2
 
