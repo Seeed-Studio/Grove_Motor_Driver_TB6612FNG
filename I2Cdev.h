@@ -80,6 +80,10 @@ THE SOFTWARE.
     #include "ArduinoWrapper.h"
 #endif
 
+#if defined(ESP8266) || defined(ESP32)
+    #define min(x,y) _min(x,y)
+#endif
+
 // 1000ms default read timeout (modify with "I2Cdev::readTimeout = [ms];")
 #define I2CDEV_DEFAULT_READ_TIMEOUT     1000
 
