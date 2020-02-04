@@ -1,4 +1,4 @@
-# Grove - Motor Driver(TB6612FNG)
+# Grove - Motor Driver(TB6612FNG)  [![Build Status](https://travis-ci.com/Seeed-Studio/Grove_Motor_Driver_TB6612FNG.svg?branch=master)](https://travis-ci.com/Seeed-Studio/Grove_Motor_Driver_TB6612FNG)
 
 This is the Arduino library of Grove - Motor Driver(TB6612FNG), based on I2C.
 
